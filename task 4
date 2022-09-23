@@ -1,0 +1,45 @@
+import math
+#create triangle class which inherits from parent class methods like counting perimeters, areas and angles 
+class Parent:
+  def __init__(self, a, b, c):
+    self.a = a
+    self.b = b
+    self.c = c
+
+    def get_a(self):
+        return self.a
+
+    def get_b(self):
+        return self.b
+
+    def get_c(self):
+        return self.c
+
+    def get_perimeter(self):
+        return self.a + self.b + self.c
+
+    def get_area(self):
+        p = self.get_perimeter() / 2
+        return math.sqrt(p * (p - self.a) * (p - self.b) * (p - self.c))
+
+    def get_angles(self):
+        return [
+            math.degrees(math.acos((self.b ** 2 + self.c ** 2 - self.a ** 2) / (2 * self.b * self.c))),
+            math.degrees(math.acos((self.a ** 2 + self.c ** 2 - self.b ** 2) / (2 * self.a * self.c))),
+            math.degrees(math.acos((self.a ** 2 + self.b ** 2 - self.c ** 2) / (2 * self.a * self.b)))
+        ]
+
+#inherit the parent class
+class Triangle(Parent):
+    def __init__(self, a, b, c):
+        super().__init__(a, b, c)
+
+    def __str__(self):
+        return f"Triangle: a={self.a}, b={self.b}, c={self.c}"
+
+    def __repr__(self):
+        return f"Triangle({self.a}, {self.b}, {self.c})"
+
+
+
+
