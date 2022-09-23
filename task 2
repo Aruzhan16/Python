@@ -1,0 +1,29 @@
+import os
+import sys
+
+#implement a code which can receive lists, strings and integers as a command line arguments and print them
+def main2():
+    for i in sys.argv:
+        print(i)
+
+if __name__ == "__main__":
+    main()
+    main2()
+    print("Hello World")
+    print("Hello World".swapcase())
+    print(decorator(main)())
+
+#implement a decorator function which helps to change string case to opposite , if lowercase to uppercase and vise versa
+
+def decorator(func):
+    def wrapper():
+        s = func()
+        return s.swapcase()
+    return wrapper
+
+
+@decorator
+def string():
+    return "Hello World"
+
+print(string())
