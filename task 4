@@ -39,6 +39,13 @@ class Triangle(Parent):
 
     def __repr__(self):
         return f"Triangle({self.a}, {self.b}, {self.c})"
+        
+        if __name__ == "__main__":
+    t = Triangle(3, 4, 5)
+    print(t)
+    print(t.get_perimeter())
+    print(t.get_area())
+    print(t.get_angles())
 
 
 
