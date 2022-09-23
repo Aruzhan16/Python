@@ -1,0 +1,15 @@
+import os
+import sys
+#create the directory using os library
+os.mkdir("test")
+#update the directory
+os.chdir("..")
+#change the directory
+os.chdir("test")
+#list the directory
+os.listdir()
+#remove the directory
+os.rmdir("test")
+
+
+ 
